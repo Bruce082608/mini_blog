@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useAuthStore } from '../stores/auth'
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: import.meta.env.VITE_API_URL || 'https://mini-blog-5.onrender.com/api',
 })
 
 api.interceptors.request.use((config) => {
