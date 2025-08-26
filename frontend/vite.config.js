@@ -8,6 +8,5 @@ export default defineConfig({
     host: true,
     port: 5173,
     allowedHosts: [/\.ngrok-free\.app$/],
-    allowedHosts: ['80cad776658e.ngrok-free.app']  //用ngrok访问的示例（去掉https://）
   },
 })

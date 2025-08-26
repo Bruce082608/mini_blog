@@ -15,12 +15,13 @@ app.config['UPLOAD_FOLDER'] = os.path.join(os.path.dirname(__file__), 'uploads')
 app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024  # 5MB
 
 # 允许本地与 ngrok 临时域名访问
-CORS(app, resources={r"/api/*": {"origins": [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "https://80cad776658e.ngrok-free.app", #这个临时允许ngrok连接
-    r"https://.*\.ngrok-free\.app"
-]}}, supports_credentials=True)
+# CORS(app, resources={r"/api/*": {"origins": [
+#     "http://localhost:5173",
+#     "http://127.0.0.1:5173",
+#     r"https://.*\.ngrok-free\.app"
+# ]}}, supports_credentials=True)
+
+CORS(app)
 
 # 初始化扩展
 jwt = JWTManager(app)
